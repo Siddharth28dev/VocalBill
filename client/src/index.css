@@ -1,0 +1,119 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-gray-50 text-gray-900 antialiased;
+}
+
+.dark body {
+  @apply bg-gray-950 text-gray-100;
+}
+
+@media print {
+
+  body * {
+    visibility: hidden;
+  }
+
+  .print-area,
+  .print-area * {
+    visibility: visible;
+  }
+
+  .print-area {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+  }
+
+}
+
+/* GLOBAL PREMIUM BACKGROUND */
+
+body {
+  background: linear-gradient(
+    135deg,
+    #eff6ff 0%,
+    #f8fafc 40%,
+    #f1f5f9 100%
+  );
+}
+
+.dark body {
+  background: linear-gradient(
+    135deg,
+    #020617 0%,
+    #030712 40%,
+    #020617 100%
+  );
+}
+
+/* GLASS CARD */
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.55) !important;
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border-radius: 18px;
+  border: 1px solid rgba(255,255,255,0.35);
+  box-shadow: 0 8px 32px rgba(31,38,135,0.15);
+  transition: all 0.25s ease;
+}
+
+.dark .glass-card {
+  background: rgba(15, 23, 42, 0.55) !important;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+/* HOVER PREMIUM */
+
+.hover-premium:hover {
+  transform: translateY(-4px) scale(1.01);
+  box-shadow: 0 20px 40px rgba(37,99,235,0.15);
+}
+
+/* GLOBAL SMOOTHNESS */
+
+* {
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease,
+    box-shadow 0.25s ease,
+    transform 0.18s ease;
+}
+
+/* BUTTON PRESS EFFECT */
+
+button:active {
+  transform: scale(0.96);
+}
+
+/* INPUT FOCUS GLOW */
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(59,130,246,0.25);
+  border-color: #3b82f6;
+}
+
+/* NETFLIX RED ACCENT UTILITY */
+
+.accent-red:hover {
+  background: linear-gradient(90deg,#ef4444,#dc2626);
+  color: white;
+}
+
+/* SECTION TITLE PREMIUM */
+
+.section-title {
+  font-size: 26px;
+  font-weight: 700;
+  background: linear-gradient(90deg,#2563eb,#f59e0b);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
