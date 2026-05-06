@@ -30,12 +30,22 @@ app.use("/api/billing", billingRoutes);
 
 const PORT = process.env.PORT || 5000;
 
+// Root Route
+app.get("/", (req, res) => {
+  res.send("VocalBill Backend Running");
+});
+
 // GLOBAL ERROR HANDLER
 app.use((err, req, res, next) => {
-  console.error("GLOBAL ERROR:", err.stack)
-  res.status(500).json({ error: err.message })
-})
-
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
+  console.error("GLOBAL ERROR:", err.stack);
+  res.status(500).json({ error: err.message });
 });
+
+// Run locally only
+if (process.env.NODE_ENV !== "production") {
+  app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
+  });
+}
+
+module.exports = app;
